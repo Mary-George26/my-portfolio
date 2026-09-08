@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mary Goerge | AI & Data Science Portfolio</title>
+    <meta name = "keywords" content="Mary George, AI Student, Data Science, Python Developer, Machine Learning, Sohag University, Portfolio">
+    <meta name="description" content = "Portfolio of Mary George, Artificial Intelligence and Data Science student and Python developer specializing in machine learning and data analysis.">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* تعديلات الـ Cover لتكون الصورة بجانب النص زي الصورة اللي بعتيها */
+        .cover-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .cover-text {
+            flex: 1;
+        }
+
+        .cover-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cover-image img {
+            mwidth: 500px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 30px 70px rgba(37, 99, 235, 0.15); /* ظل واخد من لون الزرار الأزرق */
+            /* لو حابة تقللي بهتان الألوان وتخليها حادة */
+            contrast: 1.05;
+        }
+
+        @media(max-width: 768px) {
+            .cover-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .cover-image img {
+                width: 220px;
+                height: 220px;
+            }
+        }
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #7c3aed;
+            --dark-color: #0f172a;
+            --light-color: #f8fafc;
+            --accent-color: #10b981;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Cairo', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+
+        header h1 {
+            font-size: 1.25rem;
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        section {
+            padding: 6rem 5% 4rem 5%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        h2.section-title {
+            font-size: 2.25rem;
+            color: var(--dark-color);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* 1. Cover */
+        #cover {
+            background: linear-gradient(135deg, rgba(37,99,235,0.05) 0%, rgba(124,58,237,0.05) 100%);
+            text-align: center;
+            align-items: center;
+        }
+
+        #cover h1 {
+            font-size: 3.5rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        #cover p {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Grid Layouts for Sections */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--dark-color);
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: #eff6ff;
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Contact & Footer */
+        #contact {
+            text-align: center;
+            background: var(--dark-color);
+            color: white;
+        }
+
+        #contact h2.section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #contact p {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        #thank-you {
+            text-align: center;
+            min-height: 50vh;
+            background: #ffffff;
+        }
+
+        @media(max-width: 768px) {
+            nav { display: none; }
+            #cover h1 { font-size: 2.5rem; }
+        }
+
+        .category-heading {
+            font-size: 1.25rem;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-box {
+            background: #ffffff;
+            padding: 1.75rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-box.soft-box {
+            border-left-color: var(--secondary-color);
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .skill-box h4 {
+            font-size: 1.05rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .skill-box p {
+            font-size: 0.92rem;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+        /* تنسيق قسم الخبرات المهنية */
+        .experience-card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.1);
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card h3 {
+            font-size: 1.35rem;
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+
+        .company-name {
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-top: 0.2rem;
+        }
+
+        .badge-remote {
+            background: #ecfdf5;
+            color: var(--accent-color);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #a7f3d0;
+        }
+
+        .experience-date {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .experience-desc {
+            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+        /* تنسيق قسم الخدمات */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.08);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            background: #eff6ff;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--dark-color);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-detail {
+            margin-bottom: 1.1rem;
+        }
+
+        .service-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .service-detail p {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        /* تنسيق قسم المشاريع الكاردات */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            align-items: start; /* دي اللي هتحل المشكلة وتخلي كل كارد مستقل بطوله */
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.1);
+        }
+
+        .project-image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #f1f5f9;
+            overflow: hidden;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .project-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-content h3 {
+            font-size: 1.25rem;
+            color: var(--dark-color);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .project-tools span {
+            background: #eff6ff;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .star-section {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .star-section p {
+            font-size: 0.88rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .star-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-link {
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        /* تنسيق زرار إظهار التفاصيل والمحتوى المخفي */
+        .project-details-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .project-card.active .project-details-content {
+            max-height: 500px; /* مساحة كافية لعرض التفاصيل */
+            transition: max-height 0.4s ease-in;
+            margin-top: 1rem;
+        }
+
+        .toggle-btn {
+            background: #f1f5f9;
+            color: var(--primary-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            text-align: center;
+        }
+
+        .toggle-btn:hover {
+            background: #e2e8f0;
+        }
+        /* تنسيق قسم التواصل العام */
+        .contact-section {
+            padding: 5rem 2rem;
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .contact-section .section-title {
+            font-size: 2rem;
+            color: var(--dark-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-section .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+        }
+
+        /* شبكة وسائل التواصل */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* كارت التواصل الفردي */
+        .contact-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            text-decoration: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            text-align: left; /* أو right لو الموقع باللغة العربية بالكامل */
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        /* أيقونة التواصل */
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: background 0.3s;
+        }
+
+        .contact-card:hover .contact-icon {
+            background: var(--primary-color);
+            color: #ffffff;
+        }
+
+        /* نصوص الكارت */
+        .contact-info h3 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+
+        .contact-info p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            word-break: break-all; /* عشان الإيميل الطويل يلتف كويس ومايطلعش بره الكارت */
+            margin: 0;
+        }
+        /* تنسيق قسم التوصيات */
+        .testimonials-section {
+            padding: 5rem 2rem;
+            background: #ffffff; /* خلفية بيضاء لعمل تباديل مريح مع فواصل الموقع */
+            text-align: center;
+        }
+
+        .testimonials-section .section-title {
+            font-size: 2rem;
+            color: var(--dark-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonials-section .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 2.5rem auto 0 auto;
+        }
+
+        .testimonial-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px -5px rgba(37, 99, 235, 0.1);
+        }
+
+        /* حاوية صورة الاسكرين شوت */
+        .testimonial-img-container {
+            width: 100%;
+            height: 240px;
+            background: #e2e8f0;
+            overflow: hidden;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .testimonial-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* عشان الاسكرين تظبط جوه المربع بشكل متناسق */
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover .testimonial-img-container img {
+            transform: scale(1.02); /* تكبير خفيف لطيف عند الهوفر */
+        }
+
+        .testimonial-content {
+            padding: 1.5rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            flex-grow: 1;
+        }
+
+        .testimonial-text {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .testimonial-author {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+    </style>
+</head>
+    
+<body>
+    
+    <!-- Header / Navigation -->
+    <header>
+        <h1>Portfolio</h1>
+        <nav>
+            <a href="#cover">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- 1. Cover Section -->
+    <section id="cover">
+        <div class="container cover-container">
+            <div class="cover-text">
+                <p><b>Hi, my name is Mary George</b></p>
+                <h1 style="font-size: 35px;">I'm a Data Scientist</h1>
+                <a href="#about" class="btn">FIND OUT MORE</a>
+            </div>
+            <div class="cover-image">
+                <img src="mm.png" alt="Mary's Photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">ABOUT</h2>
+            <p style="font-size: 1.1rem; max-width: 800px;">
+                You have the data. But do you know what it is really telling you—and what you should do next? I’m Mary George, an AI & Data Science student passionate about using data to solve real-world business problems and turn complex information into clear, actionable insights. My journey began when I joined the Faculty of Computers and Artificial Intelligence, specializing in AI & Data Science. Since then, I’ve been continuously developing my skills through academic learning, the Digital Egypt Pioneers Initiative (DEPI), and hands-on projects that allow me to apply what I learn to practical problems. What sets my approach apart is that I don’t want to stop at writing code or presenting numbers. I focus on understanding the problem behind the data, exploring what the numbers mean, and communicating insights in a way that can support better decisions.
+                <br><br>Through my projects, I’ve been building practical experience in Python, data analysis, web scraping, and intelligent data-driven solutions, while continuously expanding my technical toolkit. Whether you need help exploring a dataset, extracting useful information, analyzing business data, or turning raw data into meaningful insights, I’m ready to learn, build, and create value with you. Have a data problem? Let’s turn it into something you can act on.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">EDUCATION</h2>
+            <div class="grid-2">
+                
+                <!-- University -->
+                <div class="card">
+                    <h3>Faculty of Computers and Artificial Intelligence, Sohag University</h3>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">2025 – 2029</p>
+                    <p>Pursuing a B.Sc. in Artificial Intelligence and Data Science, building a robust academic foundation in computer science, software engineering, and core AI principles with an exceptional GPA.</p>
+                </div>
+
+                <!-- DEPI Scholarship -->
+                <div class="card">
+                    <h3>Digital Egypt Pioneers Initiative (DEPI)</h3>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">2026 – Present</p>
+                    <p>Selected for the 6-month national scholarship track in Data Science, executing advanced machine learning pipelines and real-world analytical projects.</p>
+                </div>
+
+                <!-- CIB Internship -->
+                <div class="card">
+                    <h3>CIB Summer Internship</h3>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">July 2026 - August 2026</p>
+                    <p>Completed intensive practical training focused on data workflows, business analysis, and generative AI applications.</p>
+                </div>
+
+                <!-- ITI Mahara-Tech -->
+                <div class="card">
+                    <h3>Information Technology Institute (ITI) Mahara-Tech</h3>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">May 2026 - June 2026</p>
+                    <p>Completed specialized certification in Python Programming, mastering core algorithms, data structures, and script development logic.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Skills Section -->
+    <section id="skills">
+       
+        <h2 class="section-title">SKILLS</h2>
+        
+        <!-- Technical Skills Category -->
+        <h3 class="category-heading">Technical Expertise</h3>
+        <div class="skills-grid">
+            <div class="skill-box">
+                <h4>Python Programming & Scripting</h4>
+                <p>Write robust scripts, automate workflows, and develop clean data processing logic.</p>
+            </div>
+            <div class="skill-box">
+                <h4>Data Analysis & Manipulation</h4>
+                <p>Clean, process, and analyze complex datasets using Pandas and NumPy.</p>
+            </div>
+            <div class="skill-box">
+                <h4>Web Scraping</h4>
+                <p>Extract, structure, and export valuable data from live websites using BeautifulSoup and Selenium.</p>
+            </div>
+        </div>
+
+        <!-- Soft Skills Category -->
+        <h3 class="category-heading" style="margin-top: 3rem;">Professional Strengths</h3>
+        <div class="skills-grid">
+            <div class="skill-box soft-box">
+                <h4>Continuous Learning</h4>
+                <p>Proven by successfully completing intensive national programs like DEPI and specialized certificates.</p>
+            </div>
+            <div class="skill-box soft-box">
+                <h4>Communication & Collaboration</h4>
+                <p>Demonstrated through active teamwork during the CIB internship and academic projects.</p>
+            </div>
+            <div class="skill-box soft-box">
+                <h4>Problem-Solving</h4>
+                <p>Refined through competitive C++ problem-solving tracks and tackling complex coding logic.</p>
+            </div>
+            <div class="skill-box soft-box">
+                <h4>Time Management</h4>
+                <p>Maintained an exceptional academic standing with high honors while managing multiple tracks.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- 5. Work Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">WORK EXPERIENCE</h2>
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <h3>Generative AI & Data Intern</h3>
+                        <p class="company-name">Commercial International Bank - CIB</p>
+                    </div>
+                    <span class="badge-remote">Remote / Online</span>
+                </div>
+                <p class="experience-date">July 2026 – August 2026</p>
+                <p class="experience-desc">
+                    Completed practical training assignments focusing on data workflows, business analysis, and generative AI applications.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Offered Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">OFFERED SERVICES</h2>
+            <div class="services-grid">
+                
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Web Scraping & Data Extraction</h3>
+                    
+                    <div class="service-detail">
+                        <span class="service-label">What I do:</span>
+                        <p>I build custom automated scraping scripts using Python, BeautifulSoup, and Selenium to extract targeted data from live websites or platforms (like e-commerce, job portals, or directories).</p>
+                    </div>
+
+                    <div class="service-detail">
+                        <span class="service-label">What I deliver:</span>
+                        <p>A structured, ready-to-use Excel/CSV file containing all requested scraped data, clean and organized according to your exact requirements.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Python Workflow Automation & Scripting</h3>
+                    
+                    <div class="service-detail">
+                        <span class="service-label">What I do:</span>
+                        <p>I write custom Python scripts to automate repetitive tasks, data entry, file processing, or routine digital workflows.</p>
+                    </div>
+
+                    <div class="service-detail">
+                        <span class="service-label">What I deliver:</span>
+                        <p>Clean, well-documented Python source code along with a quick guide or video demonstrating how to run and use the automation script.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">PROJECTS</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image-placeholder">
+                        <img src="amazon.png" alt="Amazon Web Scraper Preview">
+                    </div>
+                    <div class="project-content">
+                        <h3>Amazon Web Scraping Automation</h3>
+                        <div class="project-tools">
+                            <span>Python</span>
+                            <span>BeautifulSoup</span>
+                            <span>Selenium</span>
+                            <span>Excel</span>
+                            <span>GitHub</span>
+                        </div>
+                        
+                        <!-- زرار التوسيع -->
+                        <button class="toggle-btn" onclick="toggleProject(this)">View Details ▼</button>
+                        
+                        <!-- التفاصيل المخفية افتراضياً -->
+                        <div class="project-details-content">
+                            <div class="star-section">
+                                <p><strong>🎯 Situation:</strong> Manually gathering product details, prices, and reviews from massive e-commerce platforms like Amazon is time-consuming and inefficient for market analysis.</p>
+                                <p><strong>⚙️ Task:</strong> The objective was to build an automated web scraping script to efficiently extract structured product information from Amazon pages without manual intervention.</p>
+                                <p><strong>🛠️ Action:</strong> I developed a custom Python script utilizing Selenium to navigate dynamic web pages and BeautifulSoup to parse and extract target product data points, then structured and exported the final output into a clean Excel sheet.</p>
+                                <p><strong>📈 Result:</strong> Successfully automated the data collection process, extracted live product details accurately, and delivered a ready-to-use dataset that saves hours of manual work.</p>
+                            </div>
+                            <a href="https://github.com/Mary-George26/Amazon_Web_Scraper" target="_blank" class="project-link">View on GitHub ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image-placeholder">
+                        <img src="wuzze.png" alt="Wuzzuf Scraper Preview">
+                    </div>
+                    <div class="project-content">
+                        <h3>Wuzzuf Job Data Scraping Tool</h3>
+                        <div class="project-tools">
+                            <span>Python</span>
+                            <span>BeautifulSoup</span>
+                            <span>Selenium</span>
+                            <span>Excel</span>
+                            <span>Pandas</span>
+                        </div>
+                        
+                        <!-- زرار التوسيع -->
+                        <button class="toggle-btn" onclick="toggleProject(this)">View Details ▼</button>
+                        
+                        <!-- التفاصيل المخفية افتراضياً -->
+                        <div class="project-details-content">
+                            <div class="star-section">
+                                <p><strong>🎯 Situation:</strong> Manually browsing and gathering relevant job postings and employment details from live career portals is time-consuming for job market analysis.</p>
+                                <p><strong>⚙️ Task:</strong> The objective was to develop an efficient web scraping script to extract targeted job listings and employment arrangements automatically.</p>
+                                <p><strong>🛠️ Action:</strong> I wrote a custom Python script using Selenium to handle dynamic web elements and BeautifulSoup to parse HTML content from Wuzzuf, organizing the extracted position titles, companies, and work types seamlessly.</p>
+                                <p><strong>📈 Result:</strong> Successfully extracted live employment opportunities, exporting them into structured Excel sheets that eliminate manual data entry and streamline market research.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">TESTIMONIALS</h2>
+            
+            <div class="testimonials-grid">
+                <!-- التوصية الأولى -->
+                <div class="testimonial-card">
+                    <div class="testimonial-img-container">
+                        <!-- استبدلي مسار الصورة بصورة الاسكرين شوت الخاصة بلينكد إن -->
+                        <img src="path-to-your-linkedin-screenshot-1.png" alt="LinkedIn Recommendation" />
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">Client Name: 
+                        <br><br>Testimonial Quote: Mary delivered the web scraping script efficiently and accurately. The Excel sheet was structured precisely as requested, saving us hours of manual work. Highly recommended for data extraction tasks!
+                        </p>
+                    </div>
+                </div>
+    
+        </div>
+    </section>
+
+    <!-- 10. Call to Action & Contact Information -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Let's Work Together</h2>
+            <p>Have a project in mind or want to collaborate? Feel free to reach out!</p>
+            <div class="contact-grid">
+                <!-- الهاتف -->
+                <a href="tel:+201205634370" class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-info">
+                        <h3>Phone</h3>
+                        <p style="font-size: 10px;">+20 120 563 4370</p>
+                    </div>
+                </a>
+    
+                <!-- البريد الإلكتروني -->
+                <a href="mailto:mary.george.ai@gmail.com" class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-info">
+                        <h3>Email</h3>
+                        <p style="font-size: 10px;">mary.george.ai@gmail.com</p>
+                    </div>
+                </a>
+    
+                <!-- لينكد إن -->
+                <a href="https://linkedin.com/in/mary-george-" target="_blank" class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-info">
+                        <h3>LinkedIn</h3>
+                        <p style="font-size: 10px;">linkedin.com/in/mary-george-</p>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 11. Thank You Section -->
+    <section id="thank-you">
+        <div class="container">
+            <h2 class="section-title">Thank You!</h2>
+            <p style="font-size: 1.2rem; color: #64748b;">Thanks for taking the time to explore my portfolio. Let's build something amazing together!</p>
+        </div>
+    </section>
+
+</body>
+<script>
+    function toggleProject(button) {
+        const card = button.closest('.project-card');
+        card.classList.toggle('active');
+        
+        if (card.classList.contains('active')) {
+            button.textContent = 'Hide Details ▲';
+        } else {
+            button.textContent = 'View Details ▼';
+        }
+    }
+</script>
+</html>
