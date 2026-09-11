@@ -32,7 +32,6 @@
             object-fit: cover;
             border-radius: 50%;
             box-shadow: 0 30px 70px rgba(37, 99, 235, 0.15); /* ظل واخد من لون الزرار الأزرق */
-            /* لو حابة تقللي بهتان الألوان وتخليها حادة */
             contrast: 1.05;
         }
 
@@ -138,7 +137,6 @@
             border-radius: 2px;
         }
 
-        /* 1. Cover */
         #cover {
             background: linear-gradient(135deg, rgba(37,99,235,0.05) 0%, rgba(124,58,237,0.05) 100%);
             text-align: center;
@@ -288,7 +286,18 @@
             color: var(--text-color);
             line-height: 1.5;
         }
-        /* تنسيق قسم الخبرات المهنية */
+
+        
+        .skill-box:nth-child(odd) {
+            border-left-color: var(--primary-color);
+        }
+
+        
+        .skill-box:nth-child(even) {
+            border-left-color: var(--secondary-color);
+        }
+
+        
         .experience-card {
             background: #ffffff;
             padding: 2.5rem;
@@ -359,7 +368,7 @@
             color: var(--text-color);
             line-height: 1.7;
         }
-        /* تنسيق قسم الخدمات */
+        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -421,12 +430,12 @@
             color: var(--text-color);
             line-height: 1.6;
         }
-        /* تنسيق قسم المشاريع الكاردات */
+        
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2.5rem;
-            align-items: start; /* دي اللي هتحل المشكلة وتخلي كل كارد مستقل بطوله */
+            align-items: start; 
         }
 
         .project-card {
@@ -521,7 +530,7 @@
             color: var(--secondary-color);
             text-decoration: underline;
         }
-        /* تنسيق زرار إظهار التفاصيل والمحتوى المخفي */
+        
         .project-details-content {
             max-height: 0;
             overflow: hidden;
@@ -529,11 +538,32 @@
         }
 
         .project-card.active .project-details-content {
-            max-height: 500px; /* مساحة كافية لعرض التفاصيل */
+            max-height: 500px; 
             transition: max-height 0.4s ease-in;
             margin-top: 1rem;
         }
 
+        .project-image-placeholder.large-image-box {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            background-color: #0f172a; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image-placeholder.large-image-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; 
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-image-placeholder.large-image-box img {
+            transform: scale(1.02);
+        }
+        
         .toggle-btn {
             background: #f1f5f9;
             color: var(--primary-color);
@@ -551,7 +581,7 @@
         .toggle-btn:hover {
             background: #e2e8f0;
         }
-        /* تنسيق قسم التواصل العام */
+        
         .contact-section {
             padding: 5rem 2rem;
             background: #f8fafc;
@@ -571,7 +601,6 @@
             margin-bottom: 3rem;
         }
 
-        /* شبكة وسائل التواصل */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -580,7 +609,6 @@
             margin: 0 auto;
         }
 
-        /* كارت التواصل الفردي */
         .contact-card {
             background: #ffffff;
             padding: 2rem;
@@ -592,7 +620,7 @@
             text-decoration: none;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            text-align: left; /* أو right لو الموقع باللغة العربية بالكامل */
+            text-align: left; 
         }
 
         .contact-card:hover {
@@ -601,7 +629,6 @@
             border-color: var(--primary-color);
         }
 
-        /* أيقونة التواصل */
         .contact-icon {
             width: 50px;
             height: 50px;
@@ -621,7 +648,7 @@
             color: #ffffff;
         }
 
-        /* نصوص الكارت */
+        
         .contact-info h3 {
             font-size: 1.1rem;
             color: var(--dark-color);
@@ -632,13 +659,13 @@
         .contact-info p {
             font-size: 0.9rem;
             color: var(--text-color);
-            word-break: break-all; /* عشان الإيميل الطويل يلتف كويس ومايطلعش بره الكارت */
+            word-break: break-all; 
             margin: 0;
         }
-        /* تنسيق قسم التوصيات */
+        
         .testimonials-section {
             padding: 5rem 2rem;
-            background: #ffffff; /* خلفية بيضاء لعمل تباديل مريح مع فواصل الموقع */
+            background: #ffffff; 
             text-align: center;
         }
 
@@ -679,7 +706,6 @@
             box-shadow: 0 12px 25px -5px rgba(37, 99, 235, 0.1);
         }
 
-        /* حاوية صورة الاسكرين شوت */
         .testimonial-img-container {
             width: 100%;
             height: 240px;
@@ -691,12 +717,12 @@
         .testimonial-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* عشان الاسكرين تظبط جوه المربع بشكل متناسق */
+            object-fit: cover;
             transition: transform 0.3s ease;
         }
 
         .testimonial-card:hover .testimonial-img-container img {
-            transform: scale(1.02); /* تكبير خفيف لطيف عند الهوفر */
+            transform: scale(1.02); 
         }
 
         .testimonial-content {
@@ -722,6 +748,8 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
+        
         
     </style>
 </head>
@@ -759,10 +787,8 @@
         <div class="container">
             <h2 class="section-title">ABOUT</h2>
             <p style="font-size: 1.1rem; max-width: 800px;">
-                You Have the Data. But What Comes Next? You have tons of data. You have dashboards full of numbers, charts, and insights. But after reading all those numbers, do you know what to do next? I believe the real value of data isn’t simply knowing what happened — it’s understanding why it happened, what it means, and what decision you can make from it. I’m Mary George, an AI & Data Science student passionate about using data to solve real-world business problems and turn complex information into clear, actionable insights. My journey began when I joined the Faculty of Computers and Artificial Intelligence, specializing in AI & Data Science. Since then, I’ve been continuously developing my skills through academic learning, the Digital Egypt Pioneers Initiative (DEPI), and hands-on projects that allow me to apply what I learn to practical problems. What sets my approach apart is that I don’t want to stop at writing code or presenting numbers. I focus on understanding the problem behind the data, exploring what the numbers mean, and communicating insights in a way that can support better decisions.
-                <br><br>Through my projects, I’ve been building practical experience in Python, data analysis, web scraping, and intelligent data-driven solutions, while continuously expanding my technical toolkit. Whether you have a data-related challenge, a large amount of information that needs to be understood, or an idea you want to turn into a data-driven solution, I’d love to hear about it.
-
-Let’s look beyond the numbers — and find out what comes next.  
+                You Have the Data. But What Comes Next? You have tons of data. You have dashboards full of numbers, charts, and insights. But after reading all those numbers, do you know what to do next? I believe the real value of data isn’t simply knowing what happened — it’s understanding why it happened, what it means, and what decision you can make from it.<br><br> I’m Mary George, an AI & Data Science student passionate about using data to solve real-world business problems and turn complex information into clear, actionable insights. My journey began when I joined the Faculty of Computers and Artificial Intelligence, specializing in AI & Data Science. Since then, I’ve been continuously developing my skills through academic learning, the Digital Egypt Pioneers Initiative (DEPI), and hands-on projects that allow me to apply what I learn to practical problems. What sets my approach apart is that I don’t want to stop at writing code or presenting numbers. I focus on understanding the problem behind the data, exploring what the numbers mean, and communicating insights in a way that can support better decisions.
+                <br><br>Through my projects, I’ve been building practical experience in Python, data analysis, web scraping, and intelligent data-driven solutions, while continuously expanding my technical toolkit. Whether you have a data-related challenge, a large amount of information that needs to be understood, or an idea you want to turn into a data-driven solution, I’d love to hear about it.Let’s look beyond the numbers — and find out what comes next.  
             </p>
         </div>
     </section>
@@ -794,13 +820,6 @@ Let’s look beyond the numbers — and find out what comes next.
                     <p>Completed intensive practical training focused on data workflows, business analysis, and generative AI applications.</p>
                 </div>
 
-                <!-- ITI Mahara-Tech -->
-                <div class="card">
-                    <h3>Information Technology Institute (ITI) Mahara-Tech</h3>
-                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">May 2026 - June 2026</p>
-                    <p>Completed specialized certification in Python Programming, mastering core algorithms, data structures, and script development logic.</p>
-                </div>
-
             </div>
         </div>
     </section>
@@ -810,20 +829,40 @@ Let’s look beyond the numbers — and find out what comes next.
        
         <h2 class="section-title">SKILLS</h2>
         
-        <!-- Technical Skills Category -->
-        <h3 class="category-heading">Technical Expertise</h3>
+        <h3 class="category-heading">Programming Languages</h3>
         <div class="skills-grid">
             <div class="skill-box">
-                <h4>Python Programming & Scripting</h4>
-                <p>Write robust scripts, automate workflows, and develop clean data processing logic.</p>
+                <h4>Python</h4>
+                <p>Writing clean, efficient scripts for automation and solving complex programming problems.</p>
+            </div>
+            <div class="skill-box">
+                <h4>C++</h4>
+                <p>Mastering core programming logic, data structures, and problem-solving through competitive programming platforms.</p>
+            </div>
+        </div>
+
+        <!-- Technical Skills Category -->
+        <h3 class="category-heading"  style="margin-top: 3rem;">Technologies & Tools</h3>
+        <div class="skills-grid">
+            <div class="skill-box">
+                <h4>Web Scraping</h4>
+                <p>Extracting live data from websites using BeautifulSoup and Selenium and exporting structured information into Excel spreadsheets.</p>
             </div>
             <div class="skill-box">
                 <h4>Data Analysis & Manipulation</h4>
-                <p>Clean, process, and analyze complex datasets using Pandas and NumPy.</p>
+                <p>Cleaning, exploring, and processing raw datasets using Pandas and NumPy to extract meaningful insights.</p>
             </div>
             <div class="skill-box">
-                <h4>Web Scraping</h4>
-                <p>Extract, structure, and export valuable data from live websites using BeautifulSoup and Selenium.</p>
+                <h4>Web Development</h4>
+                <p>Using HTML5 & CSS to structuring responsive web pages and styling modern, clean user interfaces.</p>
+            </div>
+            <div class="skill-box">
+                <h4>SQL & Database Management</h4>
+                <p>Writing efficient queries, filtering datasets, and managing relational databases using SQL Server (SSMS).</p>
+            </div>
+            <div class="skill-box">
+                <h4>Environment & Version Control</h4>
+                <p>Leveraging PyCharm, Google Colab, VS Code, Git, and GitHub to manage codebases and collaborative projects seamlessly.</p>
             </div>
         </div>
 
@@ -895,16 +934,16 @@ Let’s look beyond the numbers — and find out what comes next.
                 <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-icon">⚙️</div>
-                    <h3>Python Workflow Automation & Scripting</h3>
+                    <h3>SQL Database Queries & Data Management</h3>
                     
                     <div class="service-detail">
                         <span class="service-label">What I do:</span>
-                        <p>I write custom Python scripts to automate repetitive tasks, data entry, file processing, or routine digital workflows.</p>
+                        <p>I write optimized SQL queries, design database structures, and manage datasets using SQL Server (SSMS) to retrieve, filter, and aggregate data efficiently.</p>
                     </div>
 
                     <div class="service-detail">
                         <span class="service-label">What I deliver:</span>
-                        <p>Clean, well-documented Python source code along with a quick guide or video demonstrating how to run and use the automation script.</p>
+                        <p>Clean, well-structured SQL scripts, query result reports, and organized data tables ready for analysis or database integration.</p>
                     </div>
                 </div>
 
@@ -920,7 +959,7 @@ Let’s look beyond the numbers — and find out what comes next.
                 
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <div class="project-image-placeholder">
+                    <div class="project-image-placeholder large-image-box">
                         <img src="amazon.png" alt="Amazon Web Scraper Preview">
                     </div>
                     <div class="project-content">
@@ -933,10 +972,8 @@ Let’s look beyond the numbers — and find out what comes next.
                             <span>GitHub</span>
                         </div>
                         
-                        <!-- زرار التوسيع -->
                         <button class="toggle-btn" onclick="toggleProject(this)">View Details ▼</button>
                         
-                        <!-- التفاصيل المخفية افتراضياً -->
                         <div class="project-details-content">
                             <div class="star-section">
                                 <p><strong>🎯 Situation:</strong> Manually gathering product details, prices, and reviews from massive e-commerce platforms like Amazon is time-consuming and inefficient for market analysis.</p>
@@ -951,7 +988,7 @@ Let’s look beyond the numbers — and find out what comes next.
 
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <div class="project-image-placeholder">
+                    <div class="project-image-placeholder large-image-box">
                         <img src="Wuzzuf.png" alt="Wuzzuf Scraper Preview">
                     </div>
                     <div class="project-content">
@@ -964,10 +1001,8 @@ Let’s look beyond the numbers — and find out what comes next.
                             <span>Pandas</span>
                         </div>
                         
-                        <!-- زرار التوسيع -->
                         <button class="toggle-btn" onclick="toggleProject(this)">View Details ▼</button>
                         
-                        <!-- التفاصيل المخفية افتراضياً -->
                         <div class="project-details-content">
                             <div class="star-section">
                                 <p><strong>🎯 Situation:</strong> Manually browsing and gathering relevant job postings and employment details from live career portals is time-consuming for job market analysis.</p>
@@ -991,7 +1026,6 @@ Let’s look beyond the numbers — and find out what comes next.
                 <!-- التوصية الأولى -->
                 <div class="testimonial-card">
                     <div class="testimonial-img-container">
-                        <!-- استبدلي مسار الصورة بصورة الاسكرين شوت الخاصة بلينكد إن -->
                         <img src="path-to-your-linkedin-screenshot-1.png" alt="LinkedIn Recommendation" />
                     </div>
                     <div class="testimonial-content">
