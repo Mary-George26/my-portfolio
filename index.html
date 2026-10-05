@@ -6,752 +6,7 @@
     <title>Mary George | AI & Data Science Portfolio</title>
     <meta name = "keywords" content="Mary George, AI Student, Data Science, Python Developer, Machine Learning, Sohag University, Portfolio">
     <meta name="description" content = "Portfolio of Mary George, Artificial Intelligence and Data Science student and Python developer specializing in machine learning and data analysis.">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        .cover-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-            text-align: left;
-        }
-
-        .cover-text {
-            flex: 1;
-        }
-
-        .cover-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .cover-image img {
-            mwidth: 500px;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 30px 70px rgba(37, 99, 235, 0.15); /* ظل واخد من لون الزرار الأزرق */
-            contrast: 1.05;
-        }
-
-        @media(max-width: 768px) {
-            .cover-container {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-            .cover-image img {
-                width: 220px;
-                height: 220px;
-            }
-        }
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #7c3aed;
-            --dark-color: #0f172a;
-            --light-color: #f8fafc;
-            --accent-color: #10b981;
-            --text-color: #334155;
-            --card-bg: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', 'Cairo', sans-serif;
-            color: var(--text-color);
-            background-color: var(--light-color);
-            line-height: 1.6;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-        }
-
-        header h1 {
-            font-size: 1.25rem;
-            color: var(--dark-color);
-            font-weight: 700;
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        section {
-            padding: 6rem 5% 4rem 5%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        h2.section-title {
-            font-size: 2.25rem;
-            color: var(--dark-color);
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2.section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 50px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        #cover {
-            background: linear-gradient(135deg, rgba(37,99,235,0.05) 0%, rgba(124,58,237,0.05) 100%);
-            text-align: center;
-            align-items: center;
-        }
-
-        #cover h1 {
-            font-size: 3.5rem;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-        }
-
-        #cover p {
-            font-size: 1.25rem;
-            color: #64748b;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.2s;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-        }
-
-        /* Grid Layouts for Sections */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            margin-bottom: 0.75rem;
-            color: var(--dark-color);
-        }
-
-        /* Skills Tags */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .skill-tag {
-            background: #eff6ff;
-            color: var(--primary-color);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* Contact & Footer */
-        #contact {
-            text-align: center;
-            background: var(--dark-color);
-            color: white;
-        }
-
-        #contact h2.section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        #contact p {
-            color: #94a3b8;
-            margin-bottom: 2rem;
-        }
-
-        #thank-you {
-            text-align: center;
-            min-height: 50vh;
-            background: #ffffff;
-        }
-
-        @media(max-width: 768px) {
-            nav { display: none; }
-            #cover h1 { font-size: 2.5rem; }
-        }
-
-        .category-heading {
-            font-size: 1.25rem;
-            color: var(--dark-color);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-box {
-            background: #ffffff;
-            padding: 1.75rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
-            border-left: 4px solid var(--primary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .skill-box.soft-box {
-            border-left-color: var(--secondary-color);
-        }
-
-        .skill-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-        }
-
-        .skill-box h4 {
-            font-size: 1.05rem;
-            color: var(--dark-color);
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .skill-box p {
-            font-size: 0.92rem;
-            color: var(--text-color);
-            line-height: 1.5;
-        }
-
-        
-        .skill-box:nth-child(odd) {
-            border-left-color: var(--primary-color);
-        }
-
-        
-        .skill-box:nth-child(even) {
-            border-left-color: var(--secondary-color);
-        }
-
-        
-        .experience-card {
-            background: #ffffff;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.1);
-        }
-
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-card h3 {
-            font-size: 1.35rem;
-            color: var(--dark-color);
-            font-weight: 700;
-        }
-
-        .company-name {
-            font-size: 1.05rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-top: 0.2rem;
-        }
-
-        .badge-remote {
-            background: #ecfdf5;
-            color: var(--accent-color);
-            padding: 0.35rem 0.85rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid #a7f3d0;
-        }
-
-        .experience-date {
-            font-size: 0.9rem;
-            color: #64748b;
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-        }
-
-        .experience-desc {
-            font-size: 1rem;
-            color: var(--text-color);
-            line-height: 1.7;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: #ffffff;
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.08);
-            border-color: var(--primary-color);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.25rem;
-            background: #eff6ff;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-        }
-
-        .service-card h3 {
-            font-size: 1.25rem;
-            color: var(--dark-color);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-detail {
-            margin-bottom: 1.1rem;
-        }
-
-        .service-label {
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.25rem;
-        }
-
-        .service-detail p {
-            font-size: 0.95rem;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2.5rem;
-            align-items: start; 
-        }
-
-        .project-card {
-            background: #ffffff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.1);
-        }
-
-        .project-image-placeholder {
-            width: 100%;
-            height: 200px;
-            background: #f1f5f9;
-            overflow: hidden;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .project-image-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .project-content h3 {
-            font-size: 1.25rem;
-            color: var(--dark-color);
-            margin-bottom: 0.75rem;
-            font-weight: 700;
-        }
-
-        .project-tools {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .project-tools span {
-            background: #eff6ff;
-            color: var(--primary-color);
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .star-section {
-            background: #f8fafc;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .star-section p {
-            font-size: 0.88rem;
-            color: var(--text-color);
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-        }
-
-        .star-section p:last-child {
-            margin-bottom: 0;
-        }
-
-        .project-link {
-            display: inline-block;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .project-link:hover {
-            color: var(--secondary-color);
-            text-decoration: underline;
-        }
-        
-        .project-details-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-        }
-
-        .project-card.active .project-details-content {
-            max-height: 500px; 
-            transition: max-height 0.4s ease-in;
-            margin-top: 1rem;
-        }
-
-        .project-image-placeholder.large-image-box {
-            width: 100%;
-            height: 320px;
-            overflow: hidden;
-            background-color: #0f172a; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .project-image-placeholder.large-image-box img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; 
-            transition: transform 0.4s ease;
-        }
-
-        .project-card:hover .project-image-placeholder.large-image-box img {
-            transform: scale(1.02);
-        }
-        
-        .toggle-btn {
-            background: #f1f5f9;
-            color: var(--primary-color);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: background 0.3s;
-            width: 100%;
-            text-align: center;
-        }
-
-        .toggle-btn:hover {
-            background: #e2e8f0;
-        }
-        
-        .contact-section {
-            padding: 5rem 2rem;
-            background: #f8fafc;
-            text-align: center;
-        }
-
-        .contact-section .section-title {
-            font-size: 2rem;
-            color: var(--dark-color);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-section .section-subtitle {
-            font-size: 1rem;
-            color: var(--text-color);
-            margin-bottom: 3rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .contact-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            text-decoration: none;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            text-align: left; 
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: #eff6ff;
-            color: var(--primary-color);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            transition: background 0.3s;
-        }
-
-        .contact-card:hover .contact-icon {
-            background: var(--primary-color);
-            color: #ffffff;
-        }
-
-        
-        .contact-info h3 {
-            font-size: 1.1rem;
-            color: var(--dark-color);
-            margin-bottom: 0.25rem;
-            font-weight: 700;
-        }
-
-        .contact-info p {
-            font-size: 0.9rem;
-            color: var(--text-color);
-            word-break: break-all; 
-            margin: 0;
-        }
-        
-        .testimonials-section {
-            padding: 5rem 2rem;
-            background: #ffffff; 
-            text-align: center;
-        }
-
-        .testimonials-section .section-title {
-            font-size: 2rem;
-            color: var(--dark-color);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .testimonials-section .section-subtitle {
-            font-size: 1rem;
-            color: var(--text-color);
-            margin-bottom: 3rem;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            max-width: 1100px;
-            margin: 2.5rem auto 0 auto;
-        }
-
-        .testimonial-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px -5px rgba(37, 99, 235, 0.1);
-        }
-
-        .testimonial-img-container {
-            width: 100%;
-            height: 240px;
-            background: #e2e8f0;
-            overflow: hidden;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .testimonial-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial-card:hover .testimonial-img-container img {
-            transform: scale(1.02); 
-        }
-
-        .testimonial-content {
-            padding: 1.5rem;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            flex-grow: 1;
-        }
-
-        .testimonial-text {
-            font-size: 0.9rem;
-            color: var(--text-color);
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .testimonial-author {
-            font-size: 0.8rem;
-            color: var(--primary-color);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        
-        
-    </style>
+    <link href="style.css" rel="stylesheet">
 </head>
     
 <body>
@@ -787,7 +42,7 @@
         <div class="container">
             <h2 class="section-title">ABOUT</h2>
             <p style="font-size: 1.1rem; max-width: 800px;">
-                You Have the Data. But What Comes Next? You have tons of data. You have dashboards full of numbers, charts, and insights. But after reading all those numbers, do you know what to do next? I believe the real value of data isn’t simply knowing what happened — it’s understanding why it happened, what it means, and what decision you can make from it.<br><br> I’m Mary George, an AI & Data Science student passionate about using data to solve real-world business problems and turn complex information into clear, actionable insights. My journey began when I joined the Faculty of Computers and Artificial Intelligence, specializing in AI & Data Science. Since then, I’ve been continuously developing my skills through academic learning, the Digital Egypt Pioneers Initiative (DEPI), and hands-on projects that allow me to apply what I learn to practical problems. What sets my approach apart is that I don’t want to stop at writing code or presenting numbers. I focus on understanding the problem behind the data, exploring what the numbers mean, and communicating insights in a way that can support better decisions.
+                You Have the Data. But What Comes Next? I believe the real value of data isn’t simply knowing what happened — it’s understanding why it happened, what it means, and what decision you can make from it.<br><br> I’m Mary George, an AI & Data Science student passionate about using data to solve real-world business problems and turn complex information into clear, actionable insights. My journey began when I joined the Faculty of Computers and Artificial Intelligence, specializing in AI & Data Science. Since then, I’ve been continuously developing my skills through academic learning, the Digital Egypt Pioneers Initiative (DEPI), and hands-on projects that allow me to apply what I learn to practical problems. What sets my approach apart is that I don’t want to stop at writing code or presenting numbers. I focus on understanding the problem behind the data, exploring what the numbers mean, and communicating insights in a way that can support better decisions.
                 <br><br>Through my projects, I’ve been building practical experience in Python, data analysis, web scraping, and intelligent data-driven solutions, while continuously expanding my technical toolkit. Whether you have a data-related challenge, a large amount of information that needs to be understood, or an idea you want to turn into a data-driven solution, I’d love to hear about it.Let’s look beyond the numbers — and find out what comes next.  
             </p>
         </div>
@@ -824,86 +79,118 @@
         </div>
     </section>
 
-    <!-- 4. Skills Section -->
     <section id="skills">
-       
-        <h2 class="section-title">SKILLS</h2>
-        
-        <h3 class="category-heading">Programming Languages</h3>
-        <div class="skills-grid">
-            <div class="skill-box">
-                <h4>Python</h4>
-                <p>Writing clean, efficient scripts for automation and solving complex programming problems.</p>
+        <div class="container">
+            <h2 class="section-title">SKILLS</h2>
+            
+            <!-- أزرار التنقل الأفقية (بدون أرقام) -->
+            <div class="skills-tabs-nav">
+                <button class="skill-tab-btn active" onclick="switchSkillTab(event, 'tech')">
+                    <span class="tab-text">Technical Skills</span>
+                </button>
+                <button class="skill-tab-btn" onclick="switchSkillTab(event, 'tools')">
+                    <span class="tab-text">Tools &amp; Technologies</span>
+                </button>
+                <button class="skill-tab-btn" onclick="switchSkillTab(event, 'strengths')">
+                    <span class="tab-text">Professional Strengths</span>
+                </button>
             </div>
-            <div class="skill-box">
-                <h4>C++</h4>
-                <p>Mastering core programming logic, data structures, and problem-solving through competitive programming platforms.</p>
-            </div>
-        </div>
 
-        <!-- Technical Skills Category -->
-        <h3 class="category-heading"  style="margin-top: 3rem;">Technologies & Tools</h3>
-        <div class="skills-grid">
-            <div class="skill-box">
-                <h4>Web Scraping</h4>
-                <p>Extracting live data from websites using BeautifulSoup and Selenium and exporting structured information into Excel spreadsheets.</p>
-            </div>
-            <div class="skill-box">
-                <h4>Data Analysis & Manipulation</h4>
-                <p>Cleaning, exploring, and processing raw datasets using Pandas and NumPy to extract meaningful insights.</p>
-            </div>
-            <div class="skill-box">
-                <h4>Web Development</h4>
-                <p>Using HTML5 & CSS to structuring responsive web pages and styling modern, clean user interfaces.</p>
-            </div>
-            <div class="skill-box">
-                <h4>SQL & Database Management</h4>
-                <p>Writing efficient queries, filtering datasets, and managing relational databases using SQL Server (SSMS).</p>
-            </div>
-            <div class="skill-box">
-                <h4>Environment & Version Control</h4>
-                <p>Leveraging PyCharm, Google Colab, VS Code, Git, and GitHub to manage codebases and collaborative projects seamlessly.</p>
-            </div>
-        </div>
+            <!-- محتوى الأقسام -->
+            <div class="skills-tabs-content-container">
+                
+                <!-- Technical Skills Content -->
+                <div id="tech" class="skill-tab-pane active">
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <h4>Python</h4>
+                            <p>Writing clean and efficient Python scripts for automation, data processing, and solving complex programming problems.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>C++</h4>
+                            <p>Applying core programming concepts, data structures, algorithms, and logical problem-solving through competitive programming.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Pandas &amp; NumPy</h4>
+                            <p>Cleaning, transforming, manipulating, and analyzing datasets while performing efficient numerical and data operations.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Exploratory Data Analysis (EDA)</h4>
+                            <p>Exploring datasets to identify patterns, trends, relationships, distributions, and anomalies and extract meaningful insights.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Data Visualization</h4>
+                            <p>Creating clear and informative visualizations to explore data patterns, compare values, understand distributions, and communicate analytical findings using Matplotlib and Seaborn.</p>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Soft Skills Category -->
-        <h3 class="category-heading" style="margin-top: 3rem;">Professional Strengths</h3>
-        <div class="skills-grid">
-            <div class="skill-box soft-box">
-                <h4>Continuous Learning</h4>
-                <p>Proven by successfully completing intensive national programs like DEPI and specialized certificates.</p>
+                <!-- Tools & Technologies Content -->
+                <div id="tools" class="skill-tab-pane">
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <h4>SQL &amp; Database Management</h4>
+                            <p>Writing efficient SQL queries, filtering and aggregating datasets, and managing relational databases using SQL Server (SSMS) and SQLite.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Data Cleaning &amp; Preprocessing</h4>
+                            <p>Handling missing values, correcting data types, standardizing formats, and preparing raw datasets for accurate and reliable analysis.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Web Scraping &amp; Data Extraction</h4>
+                            <p>Extracting live data from websites using BeautifulSoup and Selenium and exporting structured information into Excel and CSV files.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Web Development</h4>
+                            <p>Building structured and responsive web pages using HTML5, CSS3, and Tailwind CSS.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Environment &amp; Version Control</h4>
+                            <p>Using PyCharm, VS Code, Google Colab, Jupyter Notebook, Git, and GitHub to develop, organize, and manage projects efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Strengths Content -->
+                <div id="strengths" class="skill-tab-pane">
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <h4>Continuous Learning</h4>
+                            <p>Continuously developing technical knowledge through intensive programs, specialized learning paths, and practical projects.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Communication &amp; Collaboration</h4>
+                            <p>Working effectively within teams and communicating technical ideas clearly through internship and academic project experience.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Problem-Solving</h4>
+                            <p>Applying structured analytical thinking to break down complex technical challenges and develop practical solutions.</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Time Management</h4>
+                            <p>Effectively managing multiple learning tracks, projects, and responsibilities while maintaining consistent progress and performance.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="skill-box soft-box">
-                <h4>Communication & Collaboration</h4>
-                <p>Demonstrated through active teamwork during the CIB internship and academic projects.</p>
-            </div>
-            <div class="skill-box soft-box">
-                <h4>Problem-Solving</h4>
-                <p>Refined through competitive C++ problem-solving tracks and tackling complex coding logic.</p>
-            </div>
-            <div class="skill-box soft-box">
-                <h4>Time Management</h4>
-                <p>Maintained an exceptional academic standing with high honors while managing multiple tracks.</p>
-            </div>
-        </div>
         </div>
     </section>
 
-    <!-- 5. Work Experience Section -->
     <section id="experience">
         <div class="container">
             <h2 class="section-title">WORK EXPERIENCE</h2>
+            
             <div class="experience-card">
                 <div class="experience-header">
                     <div>
-                        <h3>Generative AI & Data Intern</h3>
-                        <p class="company-name">Commercial International Bank - CIB</p>
+                        <h3>Freelance Data Science</h3>
+                        <p class="company-name">Khamsat, Kafil, Nafezly, Freelancer & Fiverr</p>
                     </div>
-                    <span class="badge-remote">Remote / Online</span>
+                    <span class="badge-remote">Freelance / Remote</span>
                 </div>
-                <p class="experience-date">July 2026 – August 2026</p>
+                <p class="experience-date">2026 – Present</p>
                 <p class="experience-desc">
-                    Completed practical training assignments focusing on data workflows, business analysis, and generative AI applications.
+                    Providing automated data-driven solutions, including web scraping scripts, data cleaning with Pandas, and structured dataset formatting for clients across multiple global and regional freelance platforms.
                 </p>
             </div>
         </div>
@@ -912,108 +199,318 @@
     <!-- 6. Offered Services Section -->
     <section id="services">
         <div class="container">
-            <h2 class="section-title">OFFERED SERVICES</h2>
-            <div class="services-grid">
-                
+    
+            <!-- Section Header -->
+            <div class="services-header">
+                <h2 class="section-title">OFFERED SERVICES</h2>
+            </div>
+    
+            <!-- Services List -->
+            <div class="services-list">
+    
                 <!-- Service 1 -->
                 <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3>Web Scraping & Data Extraction</h3>
-                    
-                    <div class="service-detail">
-                        <span class="service-label">What I do:</span>
-                        <p>I build custom automated scraping scripts using Python, BeautifulSoup, and Selenium to extract targeted data from live websites or platforms (like e-commerce, job portals, or directories).</p>
+                    <div class="service-number">01</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M3 12h18"></path>
+                            <path d="M12 3c2.5 2.5 3.8 5.5 3.8 9S14.5 18.5 12 21"></path>
+                            <path d="M12 3c-2.5 2.5-3.8 5.5-3.8 9S9.5 18.5 12 21"></path>
+                        </svg>
                     </div>
-
-                    <div class="service-detail">
-                        <span class="service-label">What I deliver:</span>
-                        <p>A structured, ready-to-use Excel/CSV file containing all requested scraped data, clean and organized according to your exact requirements.</p>
+                    <div class="service-content">
+                        <h3>Web Scraping & Data Extraction</h3>
+                        <div class="service-details">
+                            <div class="service-detail">
+                                <span class="service-label">What I do:</span>
+                                <p>
+                                    I build custom automated scraping scripts using Python,
+                                    BeautifulSoup, and Selenium to extract targeted data from
+                                    live websites or platforms (like e-commerce, job portals,
+                                    or directories).
+                                </p>
+                            </div>
+    
+                            <div class="service-detail">
+                                <span class="service-label">What I deliver:</span>
+                                <p>
+                                    A structured, ready-to-use Excel/CSV file containing all
+                                    requested scraped data, clean and organized according to
+                                    your exact requirements.
+                                </p>
+                            </div>
+                        </div>
                     </div>
+                    <div class="service-arrow">↗</div>
                 </div>
-
+    
                 <!-- Service 2 -->
                 <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>SQL Database Queries & Data Management</h3>
-                    
-                    <div class="service-detail">
-                        <span class="service-label">What I do:</span>
-                        <p>I write optimized SQL queries, design database structures, and manage datasets using SQL Server (SSMS) to retrieve, filter, and aggregate data efficiently.</p>
+                    <div class="service-number">02</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <ellipse cx="12" cy="5" rx="7.5" ry="3"></ellipse>
+                            <path d="M4.5 5v7c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V5"></path>
+                            <path d="M4.5 12v7c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-7"></path>
+                        </svg>
                     </div>
-
-                    <div class="service-detail">
-                        <span class="service-label">What I deliver:</span>
-                        <p>Clean, well-structured SQL scripts, query result reports, and organized data tables ready for analysis or database integration.</p>
+                    <div class="service-content">
+                        <h3>SQL Database Queries & Data Management</h3>
+                        <div class="service-details">
+                            <div class="service-detail">
+                                <span class="service-label">What I do:</span>
+                                <p>
+                                    I write optimized SQL queries, design database structures,
+                                    and manage datasets using SQL Server (SSMS) to retrieve,
+                                    filter, and aggregate data efficiently.
+                                </p>
+                            </div>
+                            <div class="service-detail">
+                                <span class="service-label">What I deliver:</span>
+                                <p>
+                                    Clean, well-structured SQL scripts, query result reports,
+                                    and organized data tables ready for analysis or database integration.
+                                </p>
+                            </div>
+                        </div>
                     </div>
+                    <div class="service-arrow">↗</div>
                 </div>
-
+    
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 19V5"></path>
+                            <path d="M4 19h17"></path>
+                            <path d="M7 15l4-4 3 2 5-6"></path>
+                            <circle cx="7" cy="15" r="1"></circle>
+                            <circle cx="11" cy="11" r="1"></circle>
+                            <circle cx="14" cy="13" r="1"></circle>
+                            <circle cx="19" cy="7" r="1"></circle>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Exploratory Data Analysis - EDA</h3>
+                        <div class="service-details">
+                            <div class="service-detail">
+                                <span class="service-label">What I do:</span>
+                                <p>
+                                    I analyze complex datasets to uncover hidden patterns,
+                                    trends, and correlations using Python, Pandas, NumPy,
+                                    Seaborn, and Matplotlib within Google Colab or Jupyter Notebook.
+                                </p>
+                            </div>
+                            <div class="service-detail">
+                                <span class="service-label">What I deliver:</span>
+                                <p>
+                                    A comprehensive exploratory data analysis report accompanied
+                                    by high-quality statistical visualizations, distribution plots,
+                                    correlation heatmaps, and actionable business insights.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-arrow">↗</div>
+                </div>
+    
+                <!-- Service 4 -->
+                <div class="service-card">
+    
+                    <div class="service-number">04</div>
+    
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 5h16l-6.5 7.5V19l-3 1v-7.5L4 5Z"></path>
+                            <path d="M8 5h8"></path>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Data Cleaning & Preprocessing</h3>
+                        <div class="service-details">
+                            <div class="service-detail">
+                                <span class="service-label">What I do:</span>
+                                <p>
+                                    I clean and preprocess messy raw datasets by handling
+                                    missing values, standardizing formats, correcting data types,
+                                    and filtering outliers using IQR bounds.
+                                </p>
+                            </div>
+                            <div class="service-detail">
+                                <span class="service-label">What I deliver:</span>
+                                <p>
+                                    A pristine, structured, and error-free dataset
+                                    (Excel, CSV, or SQL-ready) fully prepared for advanced
+                                    analysis or modeling.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-arrow">↗</div>
+                </div>
+    
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 19V5"></path>
+                            <path d="M4 19h17"></path>
+                            <rect x="7" y="12" width="2.5" height="5"></rect>
+                            <rect x="11" y="9" width="2.5" height="8"></rect>
+                            <rect x="15" y="6" width="2.5" height="11"></rect>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Data Visualization & Presentation Design</h3>
+                        <div class="service-details">
+                            <div class="service-detail">
+                                <span class="service-label">What I do:</span>
+                                <p>
+                                    I transform technical data analysis and statistical findings
+                                    into clear, engaging visual narratives and professional
+                                    presentation decks.
+                                </p>
+                            </div>
+                            <div class="service-detail">
+                                <span class="service-label">What I deliver:</span>
+                                <p>
+                                    A polished, well-structured presentation deck (using Canva)
+                                    featuring key insights, visual charts, and executive summaries
+                                    tailored for stakeholders.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-arrow">↗</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. Projects Section -->
+    <!-- 7. Projects Section (Carousel / Slider View) -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title">PROJECTS</h2>
-            <div class="projects-grid">
-                
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image-placeholder large-image-box">
-                        <img src="amazon.png" alt="Amazon Web Scraper Preview">
-                    </div>
-                    <div class="project-content">
-                        <h3>Amazon Web Scraping Automation</h3>
-                        <div class="project-tools">
-                            <span>Python</span>
-                            <span>BeautifulSoup</span>
-                            <span>Selenium</span>
-                            <span>Excel</span>
-                            <span>GitHub</span>
-                        </div>
-                        
-                        <button class="toggle-btn" onclick="toggleProject(this)">View Details ▼</button>
-                        
-                        <div class="project-details-content">
-                            <div class="star-section">
-                                <p><strong>🎯 Situation:</strong> Manually gathering product details, prices, and reviews from massive e-commerce platforms like Amazon is time-consuming and inefficient for market analysis.</p>
-                                <p><strong>⚙️ Task:</strong> The objective was to build an automated web scraping script to efficiently extract structured product information from Amazon pages without manual intervention.</p>
-                                <p><strong>🛠️ Action:</strong> I developed a custom Python script utilizing Selenium to navigate dynamic web pages and BeautifulSoup to parse and extract target product data points, then structured and exported the final output into a clean Excel sheet.</p>
-                                <p><strong>📈 Result:</strong> Successfully automated the data collection process, extracted live product details accurately, and delivered a ready-to-use dataset that saves hours of manual work.</p>
-                            </div>
-                            <a href="https://github.com/Mary-George26/Amazon_Web_Scraper" target="_blank" class="project-link">View on GitHub ↗</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="carousel-container">
+                <!-- Left Arrow Button -->
+                <button class="carousel-btn prev-btn" onclick="scrollCarousel(-1)">❮</button>
+                <!-- Projects Track (Wrapper) -->
+                <div class="projects-track" id="projectsTrack">
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image-placeholder large-image-box">
-                        <img src="Wuzzuf.png" alt="Wuzzuf Scraper Preview">
-                    </div>
-                    <div class="project-content">
-                        <h3>Wuzzuf Job Data Scraping Tool</h3>
-                        <div class="project-tools">
-                            <span>Python</span>
-                            <span>BeautifulSoup</span>
-                            <span>Selenium</span>
-                            <span>Excel</span>
-                            <span>Pandas</span>
+                    <!-- Project 1: Amazon Web Scraper -->
+                    <div class="project-card">
+                        <div class="project-image-placeholder large-image-box">
+                            <img src="amazon.png" alt="Amazon Web Scraper Preview">
                         </div>
-                        
-                        <button class="toggle-btn" onclick="toggleProject(this)">View Details ▼</button>
-                        
-                        <div class="project-details-content">
-                            <div class="star-section">
-                                <p><strong>🎯 Situation:</strong> Manually browsing and gathering relevant job postings and employment details from live career portals is time-consuming for job market analysis.</p>
-                                <p><strong>⚙️ Task:</strong> The objective was to develop an efficient web scraping script to extract targeted job listings and employment arrangements automatically.</p>
-                                <p><strong>🛠️ Action:</strong> I wrote a custom Python script using Selenium to handle dynamic web elements and BeautifulSoup to parse HTML content from Wuzzuf, organizing the extracted position titles, companies, and work types seamlessly.</p>
-                                <p><strong>📈 Result:</strong> Successfully extracted live employment opportunities, exporting them into structured Excel sheets that eliminate manual data entry and streamline market research.</p>
+                        <div class="project-content">
+                            <h3>Amazon Web Scraping Automation</h3>
+                            <div class="project-tools">
+                                <span>Python</span>
+                                <span>BeautifulSoup</span>
+                                <span>Selenium</span>
+                                <span>Excel</span>
+                                <span>GitHub</span>
+                            </div>
+                            <button class="toggle-btn" onclick="toggleProject(this)">View Details ▼</button>
+                            <div class="project-details-content">
+                                <div class="star-section">
+                                    <p><strong>🎯 Situation:</strong> Manually gathering product details, prices, and reviews from massive e-commerce platforms like Amazon is time-consuming and inefficient for market analysis.</p>
+                                    <p><strong>⚙️ Task:</strong> The objective was to build an automated web scraping script to efficiently extract structured product information from Amazon pages without manual intervention.</p>
+                                    <p><strong>🛠️ Action:</strong> I developed a custom Python script utilizing Selenium to navigate dynamic web pages and BeautifulSoup to parse and extract target product data points, then structured and exported the final output into a clean Excel sheet.</p>
+                                    <p><strong>📈 Result:</strong> Successfully automated the data collection process, extracted live product details accurately, and delivered a ready-to-use dataset that saves hours of manual work.</p>
+                                </div>
+                                <a href="https://github.com/Mary-George26/Amazon_Web_Scraper" target="_blank" class="project-link">View on GitHub ↗</a>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                    <!-- Project 2: Wuzzuf Job Data Scraping Tool -->
+                    <div class="project-card">
+                        <div class="project-image-placeholder large-image-box">
+                            <img src="Wuzzuf.png" alt="Wuzzuf Scraper Preview">
+                        </div>
+                        <div class="project-content">
+                            <h3>Wuzzuf Job Data Scraping Tool</h3>
+                            <div class="project-tools">
+                                <span>Python</span>
+                                <span>BeautifulSoup</span>
+                                <span>Selenium</span>
+                                <span>Excel</span>
+                                <span>Pandas</span>
+                            </div>
+                            <button class="toggle-btn" onclick="toggleProject(this)">View Details ▼</button>
+                            <div class="project-details-content">
+                                <div class="star-section">
+                                    <p><strong>🎯 Situation:</strong> Manually browsing and gathering relevant job postings and employment details from live career portals is time-consuming for job market analysis.</p>
+                                    <p><strong>⚙️ Task:</strong> The objective was to develop an efficient web scraping script to extract targeted job listings and employment arrangements automatically.</p>
+                                    <p><strong>🛠️ Action:</strong> I wrote a custom Python script using Selenium to handle dynamic web elements and BeautifulSoup to parse HTML content from Wuzzuf, organizing the extracted position titles, companies, and work types seamlessly.</p>
+                                    <p><strong>📈 Result:</strong> Successfully extracted live employment opportunities, exporting them into structured Excel sheets that eliminate manual data entry and streamline market research.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Demographic & Socioeconomic Data Analysis -->
+                    <div class="project-card">
+                        <div class="project-image-placeholder large-image-box">
+                            <img src="correlation_heatmap.png" alt="Demographic Data Analysis Preview">
+                        </div>
+                        <div class="project-content">
+                            <h3>Demographic & Socioeconomic Data Analysis</h3>
+                            <div class="project-tools">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>NumPy</span>
+                                <span>Seaborn</span>
+                                <span>Matplotlib</span>
+                                <span>Colab</span>
+                            </div>
+                            <button class="toggle-btn" onclick="toggleProject(this)">View Details ▼</button>
+                            <div class="project-details-content">
+                                <div class="star-section">
+                                    <p><strong>🎯 Situation:</strong> Uncovering hidden patterns between individuals' personal backgrounds and their economic status requires deep exploratory data analysis of complex socioeconomic datasets.</p>
+                                    <p><strong>⚙️ Task:</strong> The objective was to investigate demographic, social, and economic indicators, patterns, and statistical relationships using Python.</p>
+                                    <p><strong>🛠️ Action:</strong> Performed comprehensive EDA in Google Colab using Pandas & NumPy for data manipulation, and Matplotlib & Seaborn to generate advanced statistical graphs, correlation matrix heatmaps, and distribution box plots.</p>
+                                    <p><strong>📈 Result:</strong> Successfully highlighted statistical dependencies like work experience and income growth, isolated economic extremes, and identified distinct lifestyle and demographic clusters.</p>
+                                </div>
+                                <a href="https://github.com/Mary-George26/Demographic-and-Socioeconomic-Data-Analysis" target="_blank" class="project-link">View Project ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Egyptian Real Estate Market Analysis -->
+                    <div class="project-card">
+                        <div class="project-image-placeholder large-image-box">
+                            <img src="output7.png" alt="Egyptian Real Estate Analysis Preview">
+                        </div>
+                        <div class="project-content">
+                            <h3>Egyptian Real Estate Market Analysis</h3>
+                            <div class="project-tools">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>NumPy</span>
+                                <span>Matplotlib</span>
+                                <span>Seaborn</span>
+                                <span>Jupyter</span>
+                            </div>
+                            <button class="toggle-btn" onclick="toggleProject(this)">View Details ▼</button>
+                            <div class="project-details-content">
+                                <div class="star-section">
+                                    <p><strong>🎯 Situation:</strong> Understanding complex pricing trends, valuations, and property distributions across the Egyptian real estate market requires deep data analysis of multi-attribute listings.</p>
+                                    <p><strong>⚙️ Task:</strong> The objective was to download, clean, preprocess, and perform exploratory data analysis (EDA) on Kaggle real estate listings to extract actionable market insights.</p>
+                                    <p><strong>🛠️ Action:</strong> Built a robust data cleaning pipeline using Pandas & NumPy to handle missing values, clean price strings, filter outliers via IQR, and extract numeric sizes. Visualized distributions, price vs. size correlations, and median valuations using Matplotlib & Seaborn.</p>
+                                    <p><strong>📈 Result:</strong> Uncovered right-skewed pricing distributions, verified that median property prices scale significantly with size brackets, and mapped volume variations across different property types.</p>
+                                </div>
+                                <a href="https://github.com/Mary-George26/Egyptian-Real-Estate-Analysis" target="_blank" class="project-link">View Project ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Arrow Button -->
+                <button class="carousel-btn next-btn" onclick="scrollCarousel(1)">❯</button>
             </div>
         </div>
     </section>
@@ -1026,15 +523,17 @@
                 <!-- التوصية الأولى -->
                 <div class="testimonial-card">
                     <div class="testimonial-img-container">
-                        <img src="path-to-your-linkedin-screenshot-1.png" alt="LinkedIn Recommendation" />
-                    </div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">Client Name: 
-                        <br><br>Testimonial Quote: Mary delivered the web scraping script efficiently and accurately. The Excel sheet was structured precisely as requested, saving us hours of manual work. Highly recommended for data extraction tasks!
-                        </p>
+                        <img src="Client Testimonials1.png" alt="LinkedIn Recommendation" />
                     </div>
                 </div>
-    
+
+                <!-- التوصية الثانية -->
+                <div class="testimonial-card">
+                    <div class="testimonial-img-container">
+                        <img src="Client Testimonials2.png" alt="LinkedIn Recommendation" />
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1085,6 +584,15 @@
 
 </body>
 <script>
+    function scrollCarousel(direction) {
+        const track = document.getElementById('projectsTrack');
+        const cardWidth = track.querySelector('.project-card').offsetWidth + 25;
+        track.scrollBy({
+            left: direction * cardWidth,
+            behavior: 'smooth'
+        });
+    }
+
     function toggleProject(button) {
         const card = button.closest('.project-card');
         card.classList.toggle('active');
@@ -1096,4 +604,16 @@
         }
     }
 </script>
+    <script>
+        function switchSkillTab(event, tabId) {
+            const buttons = document.querySelectorAll('.skill-tab-btn');
+            const panes = document.querySelectorAll('.skill-tab-pane');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            panes.forEach(pane => pane.classList.remove('active'));
+
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
 </html>
